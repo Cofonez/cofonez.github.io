@@ -4,10 +4,8 @@
 
 
 
-### 
-
 ```markdown
-Python Code Projects
+##Python Code Projects
 
 #establishing some variables that we will increment
 #for whenever we find an integer that fits the criteria
@@ -68,7 +66,7 @@ while not done:
 
 
 
-### Header 3
+##Conversion project
 #constants for conversions
 gpp = 453.592
 cpi = 2.54
