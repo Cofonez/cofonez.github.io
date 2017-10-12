@@ -68,27 +68,99 @@ while not done:
 
 
 
-# Header 1
-## Header 2
 ### Header 3
+#constants for conversions
+gpp = 453.592
+cpi = 2.54
+kpm = 1.60934
 
-- Bulleted
-- List
+print("Enter Desired Conversion")
+print("------------------------")
+print("1 - pounds/grams")
+print("2 - inches/centimeters")
+print("3 - miles/kilometers")
 
-1. Numbered
-2. List
+#input for the conversion selection
+choice = (input("enter: "))
 
-**Bold** and _Italic_ and `Code` text
+#setting beggining flag for repeating conversions with the variable more
 
-[Link](url) and ![Image](src)
-```
+more = True
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+while more == True:
+    
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Cofonez/cofonez.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+    #error handling for cases that are not 1 2 or 3
+    while choice not in ('1','2','3'):
+              print("invalid input")
+              choice = (input("enter: "))
 
-### Support or Contact
+    #case 1
+    if choice == '1':
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+    #when selection is made establish which direction they want to convert
+    #error handling here
+        selection = input("pounds to grams (a), or grams to pounds (b)?")
+        while selection not in ('a','b'):
+                print("invalid selection")
+                selection = input("pounds to grams (a), or grams to pounds (b)?")
+        if selection == 'a':
+            conv = int(input("enter the number of pounds: "))
+            result = gpp*conv
+            print((conv," pounds is equal to",format(result,'.2f'),"grams"))
+        if selection == 'b':
+            conv = int(input("enter the number of grams: "))
+            result = conv/gpp
+            print((conv," grams is equal to",format(result,'.2f'),"pounds"))
+            #variable for more conversions
+           
+
+    #case 2
+    if choice == '2':
+
+    #when selection is made establish which direction they want to convert
+    #error handling here
+        selection = input("inches to centimeters (a), or centimeters to inches (b)?")
+        while selection not in ('a','b'):
+                print("invalid selection")
+                selection = input("inches to centimeters (a), or centimeters to inches (b)?")
+        if selection == 'a':
+            conv = int(input("enter the number of inches: "))
+            result = cpi*conv
+            print((conv," inches is equal to",format(result,'.2f'),"centimeters"))
+        if selection == 'b':
+            conv = int(input("enter the number of centimeters: "))
+            result = conv/cpi
+            print((conv," centimeters is equal to",format(result,'.2f'),"inches"))
+
+    #case 3
+    if choice == '3':
+
+    #when selection is made establish which direction they want to convert
+    #error handling here
+        selection = input("miles to kilometers (a), or kilometers to miles (b)?")
+        while selection not in ('a','b'):
+                print("invalid selection")
+                selection = input("miles to kilometers (a), or kilometers to miles (b)?")
+        if selection == 'a':
+            conv = int(input("enter the number of miles: "))
+            result = kpm*conv
+            print((conv," miles is equal to",format(result,'.2f'),"kilometers"))
+        if selection == 'b':
+            conv = int(input("enter the number of kilometers: "))
+            result = conv/kpm
+            print((conv," kilometers is equal to",format(result,'.2f'),"meters"))
+
+            
+    ask = input("do you wish to do another conversion (y/n): ")
+    #asking for more conversions
+    while ask not in ('y','n','Y','N'):
+        print("invalid input")
+        ask = input("do you wish to do another conversion (y/n): ")
+    if ask in ('N','n'):
+        print("Goodbye")
+        more = False
+
+###More Examples can be found in my repositories page
