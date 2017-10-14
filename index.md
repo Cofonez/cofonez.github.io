@@ -1,4 +1,4 @@
-## Below is a couple examples of python projects that i've been working on in my spare time
+## Below is some examples of python projects that i've been working on in my spare time
 
 
 
